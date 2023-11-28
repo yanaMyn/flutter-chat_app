@@ -3,17 +3,17 @@
 <plist version="1.0">
 <dict>
 	<key>API_KEY</key>
-	<string>AIzaSyA1Xx6tV45IkXPndZmOUePar8qTQkmM0Ew</string>
+	<string>AIzaSyAOGhm1SGgntadC0DXYg-WlNtMHjkQK6DE</string>
 	<key>GCM_SENDER_ID</key>
-	<string>1025976914562</string>
+	<string>816946023931</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>com.example.chatApp</string>
 	<key>PROJECT_ID</key>
-	<string>bandingin-mobil</string>
+	<string>flutter-chat-app-fced3</string>
 	<key>STORAGE_BUCKET</key>
-	<string>bandingin-mobil.appspot.com</string>
+	<string>flutter-chat-app-fced3.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -25,8 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:1025976914562:ios:0c30c0c9cd6df52165da9b</string>
-	<key>DATABASE_URL</key>
-	<string>https://bandingin-mobil-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+	<string>1:816946023931:ios:b18c855ce30f0786748f5e</string>
 </dict>
 </plist>
