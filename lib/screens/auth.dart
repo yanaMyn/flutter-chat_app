@@ -22,6 +22,7 @@ class _AuthScreenState extends State<AuthScreen> {
   var _isAuthenticating = false;
   var _isLogin = true;
   var _emailEntered = '';
+  var _usernameEntered = '';
   var _passwordEntered = '';
   File? _selectedImage;
 
@@ -51,13 +52,13 @@ class _AuthScreenState extends State<AuthScreen> {
             .child('user_images')
             .child('${userCredentials.user!.uid}.jpg');
         await storageRef.putFile(_selectedImage!);
-        final imageUrl = storageRef.getDownloadURL();
+        final imageUrl = await storageRef.getDownloadURL();
 
         await FirebaseFirestore.instance
             .collection('users')
             .doc(userCredentials.user!.uid)
             .set({
-          'username': "to be done..",
+          'username': _usernameEntered,
           'email': _emailEntered,
           'imageUrl': imageUrl,
         });
@@ -126,6 +127,24 @@ class _AuthScreenState extends State<AuthScreen> {
                             _emailEntered = newValue!;
                           },
                         ),
+                        if (!_isLogin)
+                          TextFormField(
+                            decoration:
+                                const InputDecoration(labelText: "Username"),
+                            enableSuggestions: false,
+                            validator: (value) {
+                              if (value == null ||
+                                  value.isEmpty ||
+                                  value.length < 4) {
+                                return "Please enter at least 6 characters.";
+                              }
+
+                              return null;
+                            },
+                            onSaved: (newValue) {
+                              _usernameEntered = newValue!;
+                            },
+                          ),
                         TextFormField(
                           decoration: const InputDecoration(
                             labelText: "Password",
